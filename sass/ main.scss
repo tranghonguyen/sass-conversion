@@ -1,0 +1,263 @@
+@import "variables";
+@import "mixins";
+@import "queries";
+
+/* -- DEFAULTS -- */
+@import url(../font-awesome/css/font-awesome.min.css);
+@font-face {
+    font-family: $font-damion;
+    font-style: normal;
+    font-weight: 400;
+    src: local($font-damion), url(https://fonts.gstatic.com/s/damion/v6/ksD1WDDgZAyMd1VY75GZ6evvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+}
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: $font-arial;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    line-height: 3rem;
+	font-size: 1.3rem;
+}
+a {
+	color: $color-black;
+	text-decoration: none;
+    &:hover {
+	    color: $color-dark-goldenrod;
+    }
+}
+.box {
+    width: 90%;
+	max-width: 80rem;
+    margin: 0 auto;
+}
+
+
+
+/* -- FIRST DIV -- */
+first {
+    h1 {
+	    font-family: $font-damion;
+        margin: 1.5rem 2rem 1.5rem 0;
+    }
+    .bg-white {
+	    background-color: $color-white;
+    }
+    #company {
+	    font-size: 3rem;
+    }
+    ul { 
+        margin: 0 0 1.5rem 0;
+	    padding: 0;
+	    border: 1px solid $color-medium-grey;
+        li {
+            &:nth-of-type(6) a {
+	            border-bottom: none;
+            }
+            a {
+	            display: block;
+	            border-bottom: 1px solid $color-light-grey;
+	            padding: 1rem;
+	            background-color: $color-lightest-grey;
+                &:hover {
+	                background-color: $color-dark-grey;
+	                border-bottom: 1px solid $color-dark-grey;
+	                color: white;
+	                text-shadow: 0 1px 1px $color-darkest-grey;
+                }
+            }
+        }
+    }
+}
+
+
+/* -- SECOND DIV -- */
+.bg-people {
+    background-image: url(../images/bg/creative-office.jpg);
+    background-size: cover; /* bg image will always cover the assigned area regardless of screen-size */
+    color: $color-white;
+    padding: 2rem 0 3rem 0;
+    a {
+        display: block;
+        color: $color-white;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        margin: 0 0 1rem 0;
+        border: 1px solid $color-white;
+	    background-color: $color-black;
+	    transition: background-color 0.5s ease, border 0.5s ease;
+        &:hover {
+            background-color: $color-royal-blue;
+	        border: 1px solid $color-royal-blue;
+        }
+    }
+    h1 {
+        span {
+            &:first-of-type { /* accessing '+' in <h1> */
+                font-family: $font-impact;
+                vertical-align: middle;
+                font-size: 4rem;
+                color: $color-gold;
+            }
+            &:last-of-type {
+                font-style: italic;
+                text-transform: lowercase;
+            }
+        }
+    }
+}
+
+
+/* -- THIRD DIV -- */
+.bg-gold {
+	background-color: $color-gold;
+	padding: 2rem 0;
+    ul li {
+        width: 100%; 
+    }
+    li {
+        &:last-child a {
+	        border: none;
+        }
+        span
+            &:last-child {
+                text-transform: uppercase;
+                margin: 0 0 0 1rem;
+            }
+        a {
+	        display: block;
+	        padding: 1rem;
+	        background-color: $color-white;
+            text-decoration: none;
+	        border-bottom: 1px solid $color-light-grey;        
+            &:hover { /* when <a> that belongs to .bg-gold is hovered, color the text of second <span> that belongs to <a> to darkgoldenrod */
+                color: $color-dark-grey;
+	            background-color: $color-lightest-grey;
+            }
+        }
+    }
+}
+
+
+
+/* -- FOURTH DIV -- */
+.second {
+    padding: 2rem 0;
+    ul {
+        &::after{ /* clear <li> floated left */
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li {
+            float: left;
+            width: 50%;
+            padding: 0 1rem 0 0;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    h1 {
+        span {
+            &:first-of-type { /* accessing '+' in <h1> */
+                font-family: $font-impact;
+                vertical-align: middle;
+                font-size: 4rem;
+            }
+            &:last-of-type {
+                font-style: italic;
+            }
+        }
+    }
+    .names {
+	    display: block;
+	    text-align: center;
+	    margin: 0.5rem 0 1rem 0;
+    }
+    p {
+        padding: 0 1rem 0 0;
+        line-height: 1.5rem;
+        &:last-child{
+            padding: 0;
+        }
+    }
+}
+
+
+/* -- FIFTH DIV -- */
+.bg-black {
+	background-color: $color-background-black;
+    color: $color-white;
+    padding: 2rem 0 3rem 0;
+    h1 {
+        text-transform: uppercase;
+        span {
+            &:first-of-type { /* accessing '+' in <h1> */
+                font-family: $font-impact;
+                vertical-align: middle;
+                font-size: 4rem;
+            }
+            &:last-of-type {
+                font-style: italic;
+                text-transform: lowercase;
+            }
+        }
+    }
+    .container {
+        padding: 0;
+	    margin: 0 0 1rem 0;
+        img {
+	        width: 100%;
+            height: auto;
+        }
+        ul {
+            margin: 0 0 1.2rem 0;
+            li {
+	            margin: 0 0 0.8rem 0;
+            }
+        }
+    }
+    .form-box {
+        padding: 0.5rem 0;
+        input{
+        border: none;
+        width: 100%;
+        height: 2rem;
+        padding: 1.5rem;
+            [type="submit"]{
+                border: none;
+                background-color: $color-gold;
+                color: $color-black;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 1.3rem 2.3rem 2.3rem 2.3rem;
+            }
+        }
+        textarea {
+        width: 100%;
+        padding: 1.5rem;
+        border: none;
+        }
+    }
+}
+
+
+/* -- SIXTH DIV -- */
+.third p {
+    text-align: center;
+	line-height: 1.6rem;
+}
+
+@include desktop {
+    @include queries
+}
